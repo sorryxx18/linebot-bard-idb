@@ -1,4 +1,8 @@
 {
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
   "dependencies": {
     "@google-ai/generativelanguage": "^1.1.0",
     "@line/bot-sdk": "^8.0.0",
