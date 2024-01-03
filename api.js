@@ -1,9 +1,10 @@
+const dotenv = require("dotenv");
 // Import dependencies
 const { TextServiceClient, DiscussServiceClient } = require("@google-ai/generativelanguage").v1beta2;
 const { GoogleAuth } = require("google-auth-library");
-
+const env = dotenv.config().parsed;
 // Get PaLM API key from Environment Variable
-const API_KEY = "AIzaSyBGK6kM7Jrum1CKyDtl_rZhKRBio3fbU4U";
+const API_KEY = env.API_KEY;;
 
 // Text service
 const text = async (prompt) => {
@@ -43,6 +44,7 @@ const chat = async (prompt) => {
     }
   });
 };
+
 async function test(){
     const client = new DiscussServiceClient({ authClient: new GoogleAuth().fromAPIKey(API_KEY) });
     return await client.generateMessage({
